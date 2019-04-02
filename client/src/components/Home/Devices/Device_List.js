@@ -157,7 +157,7 @@ class Device_List extends Component {
             })
         } else if (this.state.DeviceImage == undefined) {
             this.setState({
-                ErrorMessage: 'Please select image',
+                DeviceImage: item.imageUrl
             })
         }
         else {

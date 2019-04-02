@@ -179,16 +179,16 @@ class Device_Add extends Component {
                                 />
                             </Grid>
                             <Grid item lg={6} >
-                            <div style={{marginTop:'40px'}}> 
-                            <Calendar
-                                onChange={this.handleExpiry}
-                                value={this.state.expiry}
-                                allowClear={true}
-                                disabled={false}
-                                placeholder={'please input expiry date'}
-                                format={'YYYY-MM-DD'}
-                            />
-                            </div>
+                                <div style={{ marginTop: '40px' }}>
+                                    <Calendar
+                                        onChange={this.handleExpiry}
+                                        value={this.state.expiry}
+                                        allowClear={true}
+                                        disabled={false}
+                                        placeholder={'please input expiry date'}
+                                        format={'YYYY-MM-DD'}
+                                    />
+                                </div>
                             </Grid>
                             <Grid item lg={6}><TextField
                                 error={this.state.ErrorMsgWarrenty}

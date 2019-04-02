@@ -16,13 +16,13 @@ class SignIn_PassAuth extends React.Component {
             ErrorMsgPas: false,
             PassHelperText: '',
             passwordFlag: false,
-            
+
         };
         this.handlPassword = this.handlPassword.bind(this);
-        
+
     }
 
-    
+
     handlPassword(event) {
         if (!validator.isEmpty(event.target.value)) {
             this.setState({
@@ -40,18 +40,18 @@ class SignIn_PassAuth extends React.Component {
 
         this.setState({ password: event.target.value });
     }
-    handlePass = () =>{
+    handlePass = () => {
         this.props.AuthPass(this.state.password, this.props.userData.data.username)
     }
-    componentWillMount(){
+    componentWillMount() {
         //error message handle
-        if(this.props.PassAutherror=='' || this.props.PassAutherror==undefined){
+        if (this.props.PassAutherror == '' || this.props.PassAutherror == undefined) {
             this.setState({
                 passwordFlag: false,
                 PassHelperText: '',
                 ErrorMsgPas: false
             })
-        }else{
+        } else {
             this.setState({
                 passwordFlag: true,
                 PassHelperText: 'Enter valid Pin code',
@@ -59,7 +59,7 @@ class SignIn_PassAuth extends React.Component {
             })
         }
     }
-    componentDidMount(){
+    componentDidMount() {
         //to see pin in console
         console.log('======================================')
         console.log('UserNmae:', this.props.userData.data.username)
@@ -86,29 +86,29 @@ class SignIn_PassAuth extends React.Component {
                             <CardActions>
                                 <Grid container alignItems='center' justify='center'>
                                     <Grid item lg={10}>
-                                    <TextField fullWidth
-                                        error={this.state.ErrorMsgPas}
-                                        placeholder="Enter Pin"
-                                        type="password"
-                                        onChange={this.handlPassword}
-                                        value={this.state.password}
-                                        helperText={this.state.PassHelperText}
-                                        label="Password"
-                                        margin="normal" />
+                                        <TextField fullWidth
+                                            error={this.state.ErrorMsgPas}
+                                            placeholder="Enter Pin"
+                                            type="password"
+                                            onChange={this.handlPassword}
+                                            value={this.state.password}
+                                            helperText={this.state.PassHelperText}
+                                            label="Password"
+                                            margin="normal" />
                                     </Grid>
                                     <Grid container justify='flex-end' item lg={10} >
-                                    <Button type='submit' onClick={this.handlePass} size='small' variant='raised' style={{color:'white'}} color='primary'>
-                                        ACCESS
+                                        <Button type='submit' onClick={this.handlePass} size='small' variant='raised' style={{ color: 'white' }} color='primary'>
+                                            ACCESS
                                     </Button>
                                     </Grid>
                                 </Grid>
-                                
+
 
 
                             </CardActions>
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>
-                                    Please open Browser's console to see Pin Code 
+                                    Please open Browser's console to see Pin Code
                                 </Typography>
                             </CardContent>
                         </Card>

@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 var config = require("./config/db");
 const LoginController = require("./controllers/LoginController");
 const DeviceController = require("./controllers/DeviceController")
+const UsersController = require("./controllers/UsersController")
 var auth = require('./auth');
 var multer = require('multer')
 
@@ -62,6 +63,24 @@ app
   app
   .route("/api/DeleteDevice")
   .post(auth.isAuthorized,DeviceController.DeleteDevice);
+
+
+  //AddUsers
+  app
+  .route("/api/AddUser")
+  .post(auth.isAuthorized,UsersController.AddUser);
+
+  app
+  .route("/api/getAllUsers")
+  .post(auth.isAuthorized,UsersController.getAllUsers);
+
+  app
+  .route("/api/UpdateUser")
+  .post(auth.isAuthorized,UsersController.UpdateUser);
+
+  app
+  .route("/api/DeleteUser")
+  .post(auth.isAuthorized,UsersController.DeleteUser);
 
 //port listener rout
 app.listen(port, () => {

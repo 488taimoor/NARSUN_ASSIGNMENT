@@ -6,6 +6,7 @@ var TokenGenerator = require('token-generator')({
   timestampMap: 'abcdefghij', // 10 chars array for obfuscation proposes
 });
 
+//Authenticate UserName
 exports.handleUserAuth = (req, res) => {
 
   console.log("SIGN IN ATTEMPT FROM :", req.body)
@@ -48,6 +49,7 @@ exports.handleUserAuth = (req, res) => {
 
 }
 
+//Authenticate User's Pin Code
 exports.handlePassAuth = (req, res) => {
 
   console.log("SIGN IN ATTEMPT FROM :", req.body)
